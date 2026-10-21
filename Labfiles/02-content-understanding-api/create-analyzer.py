@@ -56,12 +56,10 @@ def create_analyzer (schema, analyzer, endpoint, key):
     )
 
     # Wait for the operation to complete
+    # Asynchronous operation
     result = poller.result()
     print(f"Analyzer '{analyzer}' created successfully.")
     print(f"Status: {result['status'] if isinstance(result, dict) else 'Succeeded'}") 
-
-
-
 
 if __name__ == "__main__":
     main()        
